@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kinetic Wellness Group — GLP-1 Weight Loss Programs</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --sage:#2D6A4F;--sage-light:#40916C;--sage-bg:#E8F5E9;--sage-pale:#F1F8F2;
+  --navy:#1B2A4A;--navy-light:#2D4470;
+  --cream:#FAFAF7;--ivory:#F5F5F0;--warm:#FFF8E7;
+  --charcoal:#1A1A1A;--gray:#6B6B6B;--light-gray:#E0E0E0;--lighter:#F0F0ED;
+  --red-soft:#E57373;--green-check:#4CAF50;
+  --display:'Newsreader',Georgia,serif;
+  --body:'DM Sans',system-ui,sans-serif;
+  --ease:cubic-bezier(.23,1,.32,1);
+}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+body{font-family:var(--body);color:var(--charcoal);background:var(--cream);overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+
+.rv{opacity:0;transform:translateY(40px);transition:opacity .9s var(--ease),transform 1.1s var(--ease)}.rv.vis{opacity:1;transform:translateY(0)}.rv-d1{transition-delay:.12s}.rv-d2{transition-delay:.24s}.rv-d3{transition-delay:.36s}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:100;background:rgba(250,250,247,.97);backdrop-filter:blur(20px);border-bottom:1px solid rgba(0,0,0,.04)}
+.nav-in{max-width:1400px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:72px;padding:0 60px}
+.nav-logo{font-family:var(--display);font-size:1.3rem;font-weight:400}
+.nav-r{display:flex;align-items:center;gap:36px}
+.nav-r a{font-size:.88rem;color:var(--gray);transition:color .3s}.nav-r a:hover{color:var(--sage)}
+.nav-cta{background:var(--sage);color:white!important;padding:12px 32px;border-radius:100px;font-weight:600;font-size:.88rem;transition:all .3s var(--ease)}.nav-cta:hover{background:var(--sage-light);transform:translateY(-1px)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--sage);color:white;padding:18px 44px;border-radius:100px;font-weight:600;font-size:.95rem;transition:all .4s var(--ease);border:none;cursor:pointer}.btn:hover{background:var(--sage-light);transform:translateY(-2px);box-shadow:0 12px 36px rgba(45,106,79,.18)}
+.btn svg{width:16px;height:16px}
+.btn-dark{background:var(--navy)}.btn-dark:hover{background:var(--navy-light);box-shadow:0 12px 36px rgba(27,42,74,.2)}
+.btn-sm{padding:14px 32px;font-size:.88rem}
+
+/* ===== HERO ===== */
+.hero{padding:80px 60px 100px;min-height:100vh;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;max-width:1500px;margin:0 auto}
+.hero-left{max-width:600px}
+.hero-badge{display:inline-flex;align-items:center;gap:16px;background:white;border:1px solid var(--light-gray);border-radius:16px;padding:12px 20px;margin-bottom:32px;box-shadow:0 2px 12px rgba(0,0,0,.04)}
+.hero-badge-icon{width:56px;height:56px;background:var(--sage-bg);border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:var(--body);font-size:.55rem;font-weight:700;color:var(--sage);text-align:center;line-height:1.2;padding:4px}
+.hero-badge-text .big{font-family:var(--display);font-size:1.6rem;font-weight:400;line-height:1}.hero-badge-text .small{font-size:.78rem;color:var(--gray)}
+.hero h1{font-family:var(--display);font-size:clamp(2.6rem,4.5vw,3.8rem);font-weight:300;line-height:1.12;margin-bottom:20px}
+.hero h1 em{font-style:italic;color:var(--sage)}
+.hero-sub{font-size:1.05rem;color:var(--gray);line-height:1.7;margin-bottom:36px}
+.hero-features{display:flex;flex-direction:column;gap:16px;margin-top:32px}
+.hero-feat{display:flex;align-items:flex-start;gap:12px;font-size:.92rem;color:var(--gray)}
+.hero-feat svg{width:20px;height:20px;color:var(--sage);flex-shrink:0;margin-top:2px}
+.hero-micro{font-size:.78rem;color:var(--gray);margin-top:12px}
+.hero-micro b{color:var(--charcoal)}
+/* Hero photo grid */
+.hero-photos{display:grid;grid-template-columns:1fr 1fr;gap:8px;max-width:560px}
+.hero-photo{border-radius:16px;overflow:hidden;background:var(--lighter);aspect-ratio:3/4;position:relative}
+.hero-photo:nth-child(2){margin-top:40px}
+.hero-photo:nth-child(3){margin-top:-40px}
+.hero-photo .ph-img{width:100%;height:100%;object-fit:cover}
+.pain-card-img .ph-img{width:100%;height:100%;object-fit:cover}
+.step-img .ph-img{width:100%;height:100%;object-fit:cover;border-radius:16px}
+.hero-photo .ph{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:.75rem;color:var(--gray);font-style:italic}
+.hero-photo:nth-child(1) .ph{background:linear-gradient(135deg,#B2DFDB,#E8F5E9)}
+.hero-photo:nth-child(2) .ph{background:linear-gradient(135deg,#C8E6C9,#A5D6A7)}
+.hero-photo:nth-child(3) .ph{background:linear-gradient(135deg,#DCEDC8,#C5E1A5)}
+.hero-photo:nth-child(4) .ph{background:linear-gradient(135deg,#E8F5E9,#B2DFDB)}
+
+/* MARQUEE */
+.marquee{padding:20px 0;background:var(--sage);overflow:hidden}
+.marquee-track{display:flex;width:max-content;animation:mq 25s linear infinite}.marquee-track:hover{animation-play-state:paused}
+@keyframes mq{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.marquee-item{padding:0 48px;font-size:1rem;font-weight:600;color:white;white-space:nowrap;letter-spacing:.02em;opacity:.85}
+
+/* PAIN POINTS */
+.pain{padding:140px 60px;max-width:1500px;margin:0 auto}
+.pain h2{font-family:var(--display);font-size:clamp(2rem,4vw,3rem);font-weight:300;line-height:1.15;margin-bottom:12px;max-width:700px}
+.pain h2 em{font-style:italic;color:var(--sage)}
+.pain>p{font-size:1rem;color:var(--gray);max-width:780px;line-height:1.7;margin-bottom:56px}
+.pain-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.pain-card{background:white;border-radius:20px;overflow:hidden;border:1px solid rgba(0,0,0,.04);transition:all .4s var(--ease)}
+.pain-card:hover{transform:translateY(-4px);box-shadow:0 16px 48px rgba(0,0,0,.06)}
+.pain-card-img{height:200px;background:var(--lighter);display:flex;align-items:center;justify-content:center}
+.pain-card-img .ph{font-size:.75rem;color:var(--gray);font-style:italic}
+.pain-card-body{padding:28px 24px}
+.pain-card-body h3{font-family:var(--display);font-size:1.2rem;font-weight:400;margin-bottom:12px;line-height:1.25}
+.pain-card-body p{font-size:.85rem;color:var(--gray);line-height:1.65;margin-bottom:16px}
+.pain-bullet{display:flex;align-items:flex-start;gap:8px;font-size:.82rem;color:var(--gray);margin-bottom:8px}
+.pain-bullet svg{width:16px;height:16px;color:var(--red-soft);flex-shrink:0;margin-top:2px}
+
+/* STATS */
+.stats{padding:120px 60px;background:var(--navy);position:relative;overflow:hidden}
+.stats::before{content:'';position:absolute;top:-200px;right:-200px;width:500px;height:500px;background:radial-gradient(circle,rgba(45,106,79,.15),transparent 70%);border-radius:50%}
+.stats-in{max-width:1400px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.stats-left h2{font-family:var(--display);font-size:clamp(1.8rem,3vw,2.4rem);font-weight:300;color:white;line-height:1.2;margin-bottom:16px}
+.stats-left h2 em{font-style:italic;color:var(--sage-light)}
+.stats-left p{font-size:.95rem;color:rgba(255,255,255,.5);line-height:1.7;margin-bottom:32px}
+.stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.stat-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);border-radius:20px;padding:32px;text-align:center}
+.stat-label{font-size:.68rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:8px}
+.stat-val{font-family:var(--display);font-size:2.8rem;font-weight:300;color:white;line-height:1}
+.stat-val span{font-size:1.6rem;color:var(--sage-light)}
+.stat-desc{font-size:.82rem;color:rgba(255,255,255,.4);margin-top:8px}
+
+/* CALCULATOR */
+.calc{padding:140px 60px;text-align:center}
+.calc h2{font-family:var(--display);font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:300;margin-bottom:56px}
+.calc h2 em{font-style:italic;color:var(--sage)}
+.calc-wrap{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr 1fr;gap:28px;align-items:stretch}
+.calc-card{background:white;border-radius:24px;padding:40px 32px;border:1px solid rgba(0,0,0,.04);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.calc-card.main{background:var(--sage-pale);border-color:var(--sage-bg)}
+.calc-card h3{font-family:var(--display);font-size:1.1rem;margin-bottom:20px}
+.calc-big{font-family:var(--display);font-size:clamp(3rem,6vw,5rem);font-weight:300;color:var(--sage);line-height:1}
+.calc-unit{font-size:1rem;color:var(--gray)}
+.calc-range{width:100%;max-width:200px;margin:20px auto 0;-webkit-appearance:none;height:4px;background:var(--light-gray);border-radius:4px;outline:none;cursor:pointer}
+.calc-range::-webkit-slider-thumb{-webkit-appearance:none;width:24px;height:24px;border-radius:50%;background:var(--sage);border:3px solid white;box-shadow:0 2px 8px rgba(45,106,79,.3);cursor:pointer}
+
+/* STEPS */
+.steps{padding:140px 60px;background:var(--cream)}
+.steps h2{font-family:var(--display);font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:300;text-align:center;margin-bottom:8px}
+.steps h2 em{font-style:italic;color:var(--sage)}
+.steps-sub{text-align:center;color:var(--gray);margin-bottom:64px}
+.steps-list{max-width:1100px;margin:0 auto;display:flex;flex-direction:column;gap:24px}
+.step-card{background:white;border-radius:24px;padding:48px;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;border:1px solid rgba(0,0,0,.04)}
+.step-card:nth-child(even){direction:rtl}.step-card:nth-child(even)>*{direction:ltr}
+.step-badge{display:inline-flex;align-items:center;gap:8px;background:var(--sage-bg);color:var(--sage);padding:6px 14px;border-radius:100px;font-size:.75rem;font-weight:600;margin-bottom:12px}
+.step-card h3{font-family:var(--display);font-size:1.4rem;font-weight:400;margin-bottom:12px;line-height:1.25}
+.step-card p{font-size:.9rem;color:var(--gray);line-height:1.65}
+.step-checks{margin-top:16px;display:flex;flex-direction:column;gap:8px}
+.step-check{display:flex;align-items:center;gap:8px;font-size:.85rem;color:var(--gray)}
+.step-check svg{width:16px;height:16px;color:var(--green-check);flex-shrink:0}
+.step-img{background:var(--lighter);border-radius:16px;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center}
+.step-img .ph{font-size:.75rem;color:var(--gray);font-style:italic}
+
+/* FAQ */
+.faq{padding:140px 60px;background:var(--ivory)}
+.faq h2{font-family:var(--display);font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:300;text-align:center;margin-bottom:64px}
+.faq-list{max-width:760px;margin:0 auto}
+.faq-item{border-bottom:1px solid rgba(0,0,0,.06)}
+.faq-q{width:100%;background:none;border:none;padding:28px 0;display:flex;align-items:center;justify-content:space-between;gap:20px;cursor:pointer;font-family:var(--body);font-size:1.05rem;font-weight:500;text-align:left;transition:color .3s}.faq-q:hover{color:var(--sage)}
+.faq-plus{width:28px;height:28px;position:relative;flex-shrink:0}.faq-plus::before,.faq-plus::after{content:'';position:absolute;background:var(--gray);transition:all .4s var(--ease)}.faq-plus::before{width:16px;height:2px;top:50%;left:50%;transform:translate(-50%,-50%)}.faq-plus::after{width:2px;height:16px;top:50%;left:50%;transform:translate(-50%,-50%)}.faq-item.open .faq-plus::after{transform:translate(-50%,-50%) rotate(90deg);opacity:0}.faq-item.open .faq-plus::before{background:var(--sage)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .5s var(--ease)}.faq-item.open .faq-a{max-height:300px}
+.faq-a-in{padding:0 0 28px;color:var(--gray);font-size:.95rem;line-height:1.85}
+
+/* CTA */
+.cta{padding:160px 60px;text-align:center}
+.cta h2{font-family:var(--display);font-size:clamp(2rem,4vw,3rem);font-weight:300;max-width:760px;margin:0 auto 20px;line-height:1.25}
+.cta h2 em{font-style:italic;color:var(--sage)}
+.cta p{color:var(--gray);font-size:1.05rem;margin-bottom:48px}
+
+/* FOOTER */
+footer{background:var(--charcoal);padding:72px 60px 36px;color:rgba(255,255,255,.4)}
+.f-grid{max-width:1400px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:56px;margin-bottom:56px}
+.f-logo{font-family:var(--display);font-size:1.3rem;color:white;margin-bottom:20px}
+.f-col h4{font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:24px}
+.f-col a{display:block;margin-bottom:14px;font-size:.88rem;transition:color .3s}.f-col a:hover{color:white}
+.f-bot{max-width:1400px;margin:0 auto;border-top:1px solid rgba(255,255,255,.06);padding-top:28px;display:flex;justify-content:space-between;align-items:center;font-size:.78rem;flex-wrap:wrap;gap:16px}
+
+/* RESPONSIVE */
+@media(max-width:1024px){.hero{grid-template-columns:1fr;padding:60px 40px 80px}.hero-photos{max-width:400px;margin:0 auto;order:-1}.pain-grid{grid-template-columns:repeat(2,1fr)}.stats-in{grid-template-columns:1fr}.calc-wrap{grid-template-columns:1fr;max-width:400px;margin:0 auto}.step-card{grid-template-columns:1fr}.step-card:nth-child(even){direction:ltr}.step-img{order:-1}.f-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:768px){.hero,.pain,.stats,.calc,.steps,.faq,.cta{padding-left:24px;padding-right:24px}.nav-in{padding:0 24px}.nav-r a:not(.nav-cta){display:none}.pain-grid{grid-template-columns:1fr}.stats-grid{grid-template-columns:1fr 1fr}.hero-photos{grid-template-columns:1fr 1fr}.hero{min-height:auto}footer{padding:48px 24px 28px}.f-grid{grid-template-columns:1fr;gap:36px}.f-bot{flex-direction:column;text-align:center}}
+</style>
+</head>
+<body>
+
+<nav class="nav"><div class="nav-in"><a href="/" class="nav-logo">Kinetic Wellness Group</a><div class="nav-r"><a href="#about">About</a><a href="#programs">Programs</a><a href="#faq">FAQ</a><a href="/programs" class="nav-cta">Get my plan →</a></div></div></nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left rv">
+    <div class="hero-badge">
+      <div class="hero-badge-icon">LEGIT<br>SCRIPT<br>✓</div>
+      <div class="hero-badge-text"><div class="big">44 States Served</div><div class="small">Board-certified providers nationwide</div></div>
+    </div>
+    <h1>Your weight isn't a willpower problem.<br><em>It's a medical one.</em></h1>
+    <p class="hero-sub">Personalized GLP-1 treatment. Board-certified providers. Delivered to your door. Financing for everyone.</p>
+    <a href="/programs" class="btn">Get my personalized plan → </a>
+    <div class="hero-micro"><b>Takes 2 minutes</b> · 100% Private · Financing available</div>
+    <div class="hero-features">
+      <div class="hero-feat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>FDA-regulated GLP-1 medications — the most prescribed in clinical weight loss</div>
+      <div class="hero-feat"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>Month-to-month · No contracts · HSA/FSA eligible</div>
+    </div>
+  </div>
+  <div class="hero-photos rv rv-d1">
+    <div class="hero-photo"><img src="images/hero-1.jpg" alt="Confident woman feeling strong" class="ph-img"></div>
+    <div class="hero-photo"><img src="images/hero-2.jpg" alt="Active lifestyle jogging outdoors" class="ph-img"></div>
+    <div class="hero-photo"><img src="images/hero-3.jpg" alt="Healthcare provider with tablet" class="ph-img"></div>
+    <div class="hero-photo"><img src="images/hero-4.jpg" alt="Medication packages delivered to door" class="ph-img"></div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee"><div class="marquee-track">
+  <div class="marquee-item">LegitScript Certified</div><div class="marquee-item">·</div>
+  <div class="marquee-item">Board-Certified Providers</div><div class="marquee-item">·</div>
+  <div class="marquee-item">Strive Pharmacy Partner</div><div class="marquee-item">·</div>
+  <div class="marquee-item">Financing for Everyone</div><div class="marquee-item">·</div>
+  <div class="marquee-item">44 States Nationwide</div><div class="marquee-item">·</div>
+  <div class="marquee-item">Free Shipping</div><div class="marquee-item">·</div>
+  <div class="marquee-item">LegitScript Certified</div><div class="marquee-item">·</div>
+  <div class="marquee-item">Board-Certified Providers</div><div class="marquee-item">·</div>
+  <div class="marquee-item">Strive Pharmacy Partner</div><div class="marquee-item">·</div>
+  <div class="marquee-item">Financing for Everyone</div><div class="marquee-item">·</div>
+  <div class="marquee-item">44 States Nationwide</div><div class="marquee-item">·</div>
+  <div class="marquee-item">Free Shipping</div><div class="marquee-item">·</div>
+</div></div>
+
+<!-- PAIN POINTS -->
+<section class="pain" id="about">
+  <h2 class="rv">Weight loss isn't just about eating less.<br><em>It's about understanding your body.</em></h2>
+  <p class="rv">Whether it's food noise, hormonal shifts, or weight resistance from years of yo-yo dieting — it's common, it's medical, and GLP-1 medications can treat it at the source.</p>
+  <div class="pain-grid">
+    <div class="pain-card rv"><div class="pain-card-img"><img src="images/pain-food.jpg" alt="Food noise and cravings" class="ph-img"></div><div class="pain-card-body"><h3>The hunger that never shuts off.</h3><p>You eat, but the hunger doesn't stop. It's called food noise — and it's biological, not willpower.</p><div class="pain-bullet"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10" opacity=".15"/><path d="M15 9l-6 6M9 9l6 6" stroke="currentColor" stroke-width="2" fill="none"/></svg>The mental load of food decisions is exhausting</div></div></div>
+    <div class="pain-card rv rv-d1"><div class="pain-card-img"><img src="images/pain-metabolism.jpg" alt="Metabolism struggles" class="ph-img"></div><div class="pain-card-body"><h3>Your metabolism turned on you.</h3><p>Hormones shift how your body stores fat. What worked at 25 doesn't work the same way now.</p><div class="pain-bullet"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10" opacity=".15"/><path d="M15 9l-6 6M9 9l6 6" stroke="currentColor" stroke-width="2" fill="none"/></svg>Slower metabolism, same habits</div></div></div>
+    <div class="pain-card rv rv-d2"><div class="pain-card-img"><img src="images/pain-scale.jpg" alt="Weight cycling frustration" class="ph-img"></div><div class="pain-card-body"><h3>Lose 20. Gain 25 back.</h3><p>It's called weight cycling. Each time you lose and regain, your body adapts — making the next attempt harder.</p><div class="pain-bullet"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10" opacity=".15"/><path d="M15 9l-6 6M9 9l6 6" stroke="currentColor" stroke-width="2" fill="none"/></svg>Each restart is harder with hormonal confusion</div></div></div>
+    <div class="pain-card rv rv-d3"><div class="pain-card-img"><img src="images/pain-support.jpg" alt="Looking forward with hope" class="ph-img"></div><div class="pain-card-body"><h3>This was never about discipline.</h3><p>Food noise. Hormonal confusion. Weight cycling. These are biological — not personal flaws. GLP-1s treat them at the source.</p><div class="pain-bullet"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10" opacity=".15"/><path d="M15 9l-6 6M9 9l6 6" stroke="currentColor" stroke-width="2" fill="none"/></svg>You've looked into this before — something keeps bringing you back</div></div></div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats">
+  <div class="stats-in">
+    <div class="stats-left rv">
+      <h2>Why patients choose Kinetic Wellness Group.<br><em>It works.</em></h2>
+      <p>On average, patients on GLP-1 programs lose 5–10% of their body weight in the first 6–12 months when combined with diet and exercise.</p>
+      <a href="/programs" class="btn" style="background:white;color:var(--navy)">Get started →</a>
+    </div>
+    <div class="stats-grid">
+      <div class="stat-card rv"><div class="stat-label">Average Weight Loss</div><div class="stat-val">5-10<span>%</span></div><div class="stat-desc">of body weight in 6-12 months</div></div>
+      <div class="stat-card rv rv-d1"><div class="stat-label">States Served</div><div class="stat-val">44</div><div class="stat-desc">nationwide coverage</div></div>
+      <div class="stat-card rv rv-d2"><div class="stat-label">Provider Access</div><div class="stat-val">24<span>/7</span></div><div class="stat-desc">board-certified support</div></div>
+      <div class="stat-card rv rv-d3"><div class="stat-label">Program Tiers</div><div class="stat-val">3</div><div class="stat-desc">Bronze · Silver · Gold</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CALCULATOR -->
+<section class="calc">
+  <h2 class="rv">Find out what you could lose <em>with Kinetic.</em></h2>
+  <div class="calc-wrap">
+    <div class="calc-card rv">
+      <h3>Your starting weight</h3>
+      <div class="calc-big" id="cw">200</div>
+      <div class="calc-unit">lbs</div>
+      <input type="range" min="140" max="400" value="200" class="calc-range" id="cs">
+    </div>
+    <div class="calc-card main rv rv-d1" style="background:url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22><circle cx=%2250%22 cy=%2250%22 r=%2245%22 fill=%22none%22 stroke=%22%232D6A4F%22 stroke-width=%222%22 opacity=%22.08%22/></svg>') center/contain no-repeat, var(--sage-pale)">
+      <h3>Your projected weight loss</h3>
+      <div class="calc-big" id="cl">20</div>
+      <div class="calc-unit">lbs in 6–12 months</div>
+    </div>
+    <div class="calc-card rv rv-d2">
+      <h3>Your goal weight</h3>
+      <div class="calc-big" id="cg">180</div>
+      <div class="calc-unit">lbs</div>
+      <a href="/programs" class="btn btn-sm" style="margin-top:20px">Start my plan →</a>
+    </div>
+  </div>
+</section>
+
+<!-- STEPS -->
+<section class="steps" id="programs">
+  <h2 class="rv">How it works.<br><em>And how simple.</em></h2>
+  <p class="steps-sub rv">Four steps. No hassle. Everything delivered.</p>
+  <div class="steps-list">
+    <div class="step-card rv"><div><div class="step-badge">Step 1 · Today</div><h3>Choose your program. We handle the rest.</h3><div class="step-checks"><div class="step-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>Bronze, Silver, or Gold tiers</div><div class="step-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>100% online — takes under 2 minutes</div><div class="step-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>Financing available at checkout</div></div></div><div class="step-img"><img src="images/step-program.jpg" alt="Choosing your wellness program" class="ph-img"></div></div>
+    <div class="step-card rv"><div><div class="step-badge">Step 2 · Quick Quiz</div><h3>A real practitioner reviews your profile — for your body.</h3><div class="step-checks"><div class="step-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>Board-certified, licensed physicians</div><div class="step-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>Treatment matched to your goals</div></div></div><div class="step-img"><img src="images/step-provider.jpg" alt="Board-certified provider" class="ph-img"></div></div>
+    <div class="step-card rv"><div><div class="step-badge">Step 3 · Fast Delivery</div><h3>Everything you need. Delivered to your door.</h3><div class="step-checks"><div class="step-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>Direct from Strive Pharmacy (licensed U.S.)</div><div class="step-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>Free, discreet shipping</div></div></div><div class="step-img"><img src="images/step-delivery.jpg" alt="Medication delivery unboxing" class="ph-img"></div></div>
+    <div class="step-card rv"><div><div class="step-badge">Step 4 · Every Month</div><h3>Your plan evolves as your body does.</h3><div class="step-checks"><div class="step-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>Ongoing provider check-ins</div><div class="step-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>Pause, adjust, or cancel anytime</div></div></div><div class="step-img"><img src="images/step-progress.jpg" alt="Celebrating progress" class="ph-img"></div></div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <h2 class="rv">Every reason not to start — <em>answered.</em></h2>
+  <div class="faq-list">
+    <div class="faq-item rv"><button class="faq-q">Do you accept insurance?<span class="faq-plus"></span></button><div class="faq-a"><div class="faq-a-in">Currently we do not accept insurance. We offer financing through Pay Possible at checkout to make programs accessible to everyone, regardless of credit history.</div></div></div>
+    <div class="faq-item rv"><button class="faq-q">Which GLP-1 is right for me?<span class="faq-plus"></span></button><div class="faq-a"><div class="faq-a-in">Your practitioner evaluates your health goals, medical history, and lifestyle during consultation to recommend the best medication for you.</div></div></div>
+    <div class="faq-item rv"><button class="faq-q">What are the side effects?<span class="faq-plus"></span></button><div class="faq-a"><div class="faq-a-in">Common side effects include mild GI symptoms like nausea, which typically improve over time. Your provider monitors your response and adjusts dosing as needed.</div></div></div>
+    <div class="faq-item rv"><button class="faq-q">How much weight will I lose?<span class="faq-plus"></span></button><div class="faq-a"><div class="faq-a-in">Patients typically lose 5–10% of body weight over 6–12 months when combining medication with diet and exercise. Someone at 200 lbs might lose 10–20 pounds.</div></div></div>
+    <div class="faq-item rv"><button class="faq-q">What states are you licensed in?<span class="faq-plus"></span></button><div class="faq-a"><div class="faq-a-in">Nationwide except Alaska, Arkansas, Indiana, Michigan, Minnesota, and South Carolina.</div></div></div>
+    <div class="faq-item rv"><button class="faq-q">What happens if something goes wrong?<span class="faq-plus"></span></button><div class="faq-a"><div class="faq-a-in">Your care team at Kinetic Wellness Group is available to help. Board-certified providers monitor your treatment and adjust as needed. Strive Pharmacy (480-626-4366) handles all medication.</div></div></div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="rv">
+    <h2>You've read this far.<br><em>That means something.</em></h2>
+    <p>Take 2 minutes. See if you qualify. No commitment required.</p>
+    <a href="/programs" class="btn btn-dark">Get my personalized plan →</a>
+    <div class="hero-micro" style="margin-top:16px"><b>100% Private</b> · Financing available · Cancel anytime</div>
+  </div>
+</section>
+
+<footer>
+  <div class="f-grid">
+    <div><div class="f-logo">Kinetic Wellness Group</div><p style="font-size:.88rem;line-height:1.7;max-width:300px">Empowering individuals toward better health through effective GLP-1 medication solutions.</p><p style="margin-top:20px;font-size:.8rem">4554 North Forestdale Drive A3<br>Park City, UT 84098</p><p style="margin-top:8px;font-size:.8rem"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="573e393138173c3e3932233e3420323b3b3932242430253822277934383a">[email&#160;protected]</a></p></div>
+    <div class="f-col"><h4>Programs</h4><a href="/programs">All Programs</a><a href="/product/bronze">Bronze</a><a href="/product/silver">Silver</a><a href="/product/gold">Gold</a></div>
+    <div class="f-col"><h4>Account</h4><a href="/account">My Account</a><a href="/support">Support</a><a href="/financing">Financing</a></div>
+    <div class="f-col"><h4>Legal</h4><a href="/terms-of-use">Terms of Use</a><a href="/privacy-policy">Privacy Policy</a><a href="/shipping-policy">Shipping Policy</a><a href="/refund-policy">Refund &amp; Cancellation</a><a href="/consumer-health-data-privacy">Health Data Privacy</a></div>
+  </div>
+  <div class="f-bot"><span>&copy; 2026 Kinetic Wellness Group. All Rights Reserved.</span></div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+const obs=new IntersectionObserver(e=>{e.forEach(el=>{if(el.isIntersecting){el.target.classList.add('vis');obs.unobserve(el.target)}})},{threshold:.08,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
+document.querySelectorAll('.faq-q').forEach(b=>{b.addEventListener('click',()=>{const item=b.closest('.faq-item'),open=item.classList.contains('open');document.querySelectorAll('.faq-item.open').forEach(i=>i.classList.remove('open'));if(!open)item.classList.add('open')})});
+const cs=document.getElementById('cs'),cw=document.getElemen

@@ -32,6 +32,16 @@ a{text-decoration:none;color:inherit}
 .nav-r{display:flex;align-items:center;gap:36px}
 .nav-r a{font-size:.88rem;color:var(--gray);transition:color .3s}.nav-r a:hover{color:var(--sage)}
 .nav-cta{background:var(--sage);color:white!important;padding:12px 32px;border-radius:100px;font-weight:600;font-size:.88rem;transition:all .3s var(--ease)}.nav-cta:hover{background:var(--sage-light);transform:translateY(-1px)}
+/* HAMBURGER */
+.ham{display:none;background:none;border:none;cursor:pointer;padding:8px;margin-left:12px;position:relative;z-index:201}
+.ham span{display:block;width:22px;height:2px;background:var(--charcoal);border-radius:2px;transition:all .3s var(--ease)}.ham span+span{margin-top:6px}
+.ham.active span:nth-child(1){transform:translateY(8px) rotate(45deg)}.ham.active span:nth-child(2){opacity:0}.ham.active span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
+/* MOBILE MENU */
+.mob-menu{position:fixed;top:0;right:0;width:min(320px,85vw);height:100vh;background:var(--cream);z-index:200;transform:translateX(100%);transition:transform .4s var(--ease);padding:100px 32px 40px;display:flex;flex-direction:column;gap:8px;box-shadow:-8px 0 40px rgba(0,0,0,.08)}
+.mob-menu.open{transform:translateX(0)}
+.mob-menu a{font-size:1.1rem;padding:16px 0;border-bottom:1px solid rgba(0,0,0,.06);color:var(--charcoal);transition:color .3s}.mob-menu a:hover{color:var(--sage)}
+.mob-menu .nav-cta{display:inline-flex;align-items:center;justify-content:center;margin-top:16px;border-bottom:none;padding:16px 32px;color:white!important}
+.mob-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.3);z-index:199;opacity:0;pointer-events:none;transition:opacity .4s var(--ease)}.mob-overlay.open{opacity:1;pointer-events:auto}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--sage);color:white;padding:18px 44px;border-radius:100px;font-weight:600;font-size:.95rem;transition:all .4s var(--ease);border:none;cursor:pointer}.btn:hover{background:var(--sage-light);transform:translateY(-2px);box-shadow:0 12px 36px rgba(45,106,79,.18)}
 .btn svg{width:16px;height:16px}
 .btn-dark{background:var(--navy)}.btn-dark:hover{background:var(--navy-light);box-shadow:0 12px 36px rgba(27,42,74,.2)}
@@ -156,13 +166,62 @@ footer{background:var(--charcoal);padding:72px 60px 36px;color:rgba(255,255,255,
 .f-bot{max-width:1400px;margin:0 auto;border-top:1px solid rgba(255,255,255,.06);padding-top:28px;display:flex;justify-content:space-between;align-items:center;font-size:.78rem;flex-wrap:wrap;gap:16px}
 
 /* RESPONSIVE */
-@media(max-width:1024px){.hero{grid-template-columns:1fr;padding:60px 40px 80px}.hero-photos{max-width:400px;margin:0 auto;order:-1}.pain-grid{grid-template-columns:repeat(2,1fr)}.stats-in{grid-template-columns:1fr}.calc-wrap{grid-template-columns:1fr;max-width:400px;margin:0 auto}.step-card{grid-template-columns:1fr}.step-card:nth-child(even){direction:ltr}.step-img{order:-1}.f-grid{grid-template-columns:1fr 1fr}}
-@media(max-width:768px){.hero,.pain,.stats,.calc,.steps,.faq,.cta{padding-left:24px;padding-right:24px}.nav-in{padding:0 24px}.nav-r a:not(.nav-cta){display:none}.pain-grid{grid-template-columns:1fr}.stats-grid{grid-template-columns:1fr 1fr}.hero-photos{grid-template-columns:1fr 1fr}.hero{min-height:auto}footer{padding:48px 24px 28px}.f-grid{grid-template-columns:1fr;gap:36px}.f-bot{flex-direction:column;text-align:center}}
+@media(max-width:1024px){.hero{grid-template-columns:1fr;padding:60px 40px 80px}.hero-photos{max-width:400px;margin:0 auto;order:-1}.pain-grid{grid-template-columns:repeat(2,1fr)}.stats-in{grid-template-columns:1fr}.calc-wrap{grid-template-columns:1fr;max-width:400px;margin:0 auto}.step-card{grid-template-columns:1fr;padding:32px}.step-card:nth-child(even){direction:ltr}.step-img{order:-1}.f-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:768px){
+  .hero,.pain,.stats,.calc,.steps,.faq,.cta{padding-left:20px;padding-right:20px}
+  .pain{padding-top:80px;padding-bottom:80px}
+  .stats{padding-top:80px;padding-bottom:80px}
+  .calc{padding-top:80px;padding-bottom:80px}
+  .steps{padding-top:80px;padding-bottom:80px}
+  .faq{padding-top:80px;padding-bottom:80px}
+  .cta{padding-top:80px;padding-bottom:80px}
+  .nav-in{padding:0 20px;height:60px}
+  .nav-r{display:none}
+  .ham{display:flex;flex-direction:column}
+  .nav-logo{font-size:1.1rem}
+  .hero{min-height:auto;padding:40px 20px 60px;gap:32px}
+  .hero-photos{grid-template-columns:1fr 1fr;max-width:100%;gap:6px}
+  .hero-photo:nth-child(2){margin-top:24px}
+  .hero-photo:nth-child(3){margin-top:-24px}
+  .hero h1 br,.pain h2 br,.stats-left h2 br,.cta h2 br{display:none}
+  .hero-badge{padding:10px 16px;margin-bottom:24px}
+  .hero-badge-icon{width:44px;height:44px;font-size:.48rem}
+  .hero-badge-text .big{font-size:1.25rem}
+  .hero-sub{font-size:.95rem;margin-bottom:28px}
+  .btn{padding:16px 32px;font-size:.9rem;width:100%;text-align:center}
+  .btn-sm{padding:14px 28px;width:auto}
+  .hero-features{margin-top:24px;gap:12px}
+  .hero-feat{font-size:.85rem}
+  .pain-grid{grid-template-columns:1fr}
+  .pain-card-body{padding:24px 20px}
+  .stats-grid{grid-template-columns:1fr 1fr}
+  .stat-card{padding:24px 16px}
+  .stat-val{font-size:2.2rem}
+  .stats-left{text-align:center}
+  .stats-left .btn{width:auto}
+  .step-card{padding:24px 20px;gap:24px}
+  footer{padding:48px 20px 28px}
+  .f-grid{grid-template-columns:1fr;gap:36px}
+  .f-bot{flex-direction:column;text-align:center}
+}
+@media(max-width:480px){
+  .hero-photos{gap:4px}
+  .hero-photo{border-radius:12px}
+  .stats-grid{grid-template-columns:1fr}
+  .calc-big{font-size:clamp(2.4rem,10vw,3.5rem)}
+  .calc-card{padding:28px 20px}
+  .faq-q{font-size:.95rem;padding:22px 0}
+  .step-card{padding:20px 16px}
+  .pain h2,.stats-left h2,.calc h2,.steps h2,.faq h2,.cta h2{font-size:1.6rem}
+  .hero h1{font-size:2rem}
+}
 </style>
 </head>
 <body>
 
-<nav class="nav"><div class="nav-in"><a href="/" class="nav-logo">Kinetic Wellness Group</a><div class="nav-r"><a href="#about">About</a><a href="#programs">Programs</a><a href="#faq">FAQ</a><a href="/programs" class="nav-cta">Get my plan →</a></div></div></nav>
+<nav class="nav"><div class="nav-in"><a href="/" class="nav-logo">Kinetic Wellness Group</a><div class="nav-r"><a href="#about">About</a><a href="#programs">Programs</a><a href="#faq">FAQ</a><a href="/programs" class="nav-cta">Get my plan →</a></div><button class="ham" aria-label="Menu"><span></span><span></span><span></span></button></div></nav>
+<div class="mob-overlay"></div>
+<div class="mob-menu"><a href="#about">About</a><a href="#programs">Programs</a><a href="#faq">FAQ</a><a href="/programs" class="nav-cta">Get my plan →</a></div>
 
 <!-- HERO -->
 <section class="hero">
@@ -308,6 +367,11 @@ document.querySelectorAll('.rv').forEach(el=>{const r=el.getBoundingClientRect()
 document.querySelectorAll('.faq-q').forEach(b=>{b.addEventListener('click',()=>{const item=b.closest('.faq-item'),open=item.classList.contains('open');document.querySelectorAll('.faq-item.open').forEach(i=>i.classList.remove('open'));if(!open)item.classList.add('open')})});
 const cs=document.getElementById('cs'),cw=document.getElementById('cw'),cl=document.getElementById('cl'),cg=document.getElementById('cg');
 cs.addEventListener('input',()=>{const w=+cs.value;cw.textContent=w;cl.textContent=Math.round(w*.1);cg.textContent=Math.round(w*.9)});
+const ham=document.querySelector('.ham'),mob=document.querySelector('.mob-menu'),ov=document.querySelector('.mob-overlay');
+function toggleMenu(){ham.classList.toggle('active');mob.classList.toggle('open');ov.classList.toggle('open');document.body.style.overflow=mob.classList.contains('open')?'hidden':''}
+ham.addEventListener('click',toggleMenu);
+ov.addEventListener('click',toggleMenu);
+mob.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{if(mob.classList.contains('open'))toggleMenu()}));
 </script>
 </body>
 </html>
